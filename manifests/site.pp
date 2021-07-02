@@ -18,6 +18,7 @@ node 'minetest.puppet.vm' {
     ensure => file,
     content => "Welcome to ${fqdn}, the minecraft one",
     owner => 'root',
+  }
   include role::minecraft_server
 }
 node /^web/ { 
