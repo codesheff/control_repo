@@ -13,12 +13,12 @@ node 'master.puppet.vm' {
     owner => 'root',
   }
 }
-node 'minetest.puppet.vm': {
+node 'minetest.puppet.vm' {
   file {'/root/README':
     ensure => file,
     content => "Welcome to ${fqdn}, the minecraft one",
     owner => 'root',
-  #include role::minecraft_server
+  include role::minecraft_server
 }
 node /^web/ { 
   include role::app_server
